@@ -1,6 +1,5 @@
 package cn.wwq.diyqueue;
 
-import org.junit.Test;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -49,7 +48,7 @@ public class DIYQueueDemo {
         }
     }
 
-    @Test
+
     public void test() throws InterruptedException {
 
         ThreadPoolExecutor executor = new ThreadPoolExecutor(10, 10, 0, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>());
