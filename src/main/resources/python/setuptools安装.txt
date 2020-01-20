@@ -1,0 +1,4 @@
+解压到当前目录： unzip setuptools-40.2.0.zip
+切换到setuptools-40.2.0
+# python setup.py build  //编译setuptools
+# python setup.py install  //开始执行setuptools安装
