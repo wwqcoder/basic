@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:task="http://www.springframework.org/schema/task"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+
+
+    <context:annotation-config />
+    <!-- 自动调度需要扫描的包 -->
+    <context:component-scan base-package="test.定时.demo03.demo0301" ></context:component-scan>
+    <!-- 定时器开关 -->
+    <task:executor id="executor" pool-size="5"/>
+    <task:annotation-driven executor="executor" scheduler="scheduler"/>
+
+    <!-- 配置调度 需要在类名前添加 @Service -->
+    <task:scheduled-tasks>
+        <task:scheduled ref="demoTask" method="execute" cron="0/10 * * * * ?"/>
+    </task:scheduled-tasks>
+    <task:scheduler id="scheduler" pool-size="10"/>
+    <!-- 不通过配置调度,需要在类名前 @Component/@Service,在方法名 前添加@Scheduled(cron="0/5 * * * * ? ")、即用注解的方式-->
+
+    <bean class="test.定时.demo03.demo0301.Task" id="demoTask"/>
+</beans>
