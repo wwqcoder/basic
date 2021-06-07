@@ -489,7 +489,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>1.0.13</version>
+            <version>1.2.0</version>
         </dependency>
 
 
@@ -537,7 +537,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>1.0.13</version>
+            <version>1.2.0</version>
         </dependency>
         <!--     logback扩展包，监听,用于解决与spring的结合 -->
         <dependency>
